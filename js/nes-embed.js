@@ -96,7 +96,7 @@ function nes_init(canvas_id){
 	framebuffer_u32 = new Uint32Array(buffer);
 	
 	// Setup audio.
-    audio_ctx = new window.AudioContext();
+    var audio_ctx = new window.AudioContext({ sampleRate: nes.papu.sampleRate });
     audio_ctx.crossOrigin = 'anonymous';
     
 	var script_processor = audio_ctx.createScriptProcessor(AUDIO_BUFFERING, 0, 2);
