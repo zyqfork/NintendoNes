@@ -5,10 +5,10 @@
         (function(i){
             var action = BUT_LIST[i].getAttribute('role');
             BUT_LIST[i].addEventListener('touchstart',function(){
-                nes.buttonDown(player,jsnes.Controller[action]);
+                nes.buttonDown(player,jsnes.Controller[this.getAttribute('role')]);
             },false);
             BUT_LIST[i].addEventListener('touchend',function(){
-                nes.buttonUp(player,jsnes.Controller[action])
+                nes.buttonUp(player,jsnes.Controller[this.getAttribute('role')])
             },false);
             if(action='START' && audio_ctx){
                 if(audio_ctx.state !== 'running') {
